@@ -15,6 +15,7 @@ function App() {
       price: [300],
     },
   ];
+  const taiyakiSizes: string[] = ["大", "中", "小"];
   return (
     <Router>
       <Routes>
