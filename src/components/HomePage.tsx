@@ -1,4 +1,4 @@
-import NavigationPanel from "./NavigationPanel";
+import NavigationButtons from "./NavigationButtons";
 
 const HomePage = () => {
   return (
