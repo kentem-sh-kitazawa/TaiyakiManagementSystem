@@ -1,5 +1,7 @@
 import NavigationButtons from "./NavigationButtons";
 
+import "../Styles/HomePage.css";
+
 const HomePage = () => {
   return (
     <div className="home-page-content">
