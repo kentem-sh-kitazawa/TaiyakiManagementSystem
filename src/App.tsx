@@ -20,8 +20,16 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/purchaseForm" element={<PurchaseForm />}></Route>
         <Route path="/editForm" element={<EditForm />}></Route>
+        <Route
+          path="/purchaseForm"
+          element={
+            <PurchaseForm
+              taiyakiInfos={taiyakiInfos}
+              taiyakiSizes={taiyakiSizes}
+            />
+          }
+        ></Route>
       </Routes>
     </Router>
   );
