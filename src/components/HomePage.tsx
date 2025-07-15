@@ -17,6 +17,13 @@ const HomePage = ({
   setPurchaseTaiyakis,
   setSelectedId,
 }: Props) => {
+  const getTotal = () => {
+    let total = 0;
+    purchaseTaiyakis.forEach((taiyaki) => {
+      total += taiyaki.price;
+    });
+    return total;
+  };
   return (
     <div className="home-page-content">
       <table>
