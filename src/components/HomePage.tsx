@@ -27,6 +27,9 @@ const HomePage = ({
   const handleOnClick = (id: string) => {
     setSelectedId(id);
   };
+  useEffect(() => {
+    setSelectedId("");
+  }, [setSelectedId]);
   return (
     <div className="home-page-content">
       <table>
