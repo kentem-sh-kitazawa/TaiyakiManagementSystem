@@ -3,13 +3,18 @@ import { useEffect, useMemo, useState } from "react";
 type Props = {
   values: string[];
   label: string;
-  selected?: string;
+  initializeValue?: string;
   isDisabled?: boolean;
 };
 
   const [selectedValue, setSelectedValue] = useState(values[0]);
   const [checkedName, setCheckedName] = useState(selected ?? values[0]);
 const useRadioButtonGroup = ({
+  values,
+  label,
+  initializeValue,
+  isDisabled,
+}: Props) => {
 
   const radioButtonElement = useMemo(
     () => (
