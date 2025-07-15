@@ -7,9 +7,9 @@ type Props = {
   isDisabled?: boolean;
 };
 
-const useNameRadioButton = ({ values, label, selected, isDisabled }: Props) => {
   const [selectedValue, setSelectedValue] = useState(values[0]);
   const [checkedName, setCheckedName] = useState(selected ?? values[0]);
+const useRadioButtonGroup = ({
 
   const radioButtonElement = useMemo(
     () => (
