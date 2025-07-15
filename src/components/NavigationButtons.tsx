@@ -18,6 +18,16 @@ const NavigationButtons = ({
   setPurchaseTaiyakis,
   setSelectedId,
 }: Props) => {
+  const handleOnDelete = () => {
+    setPurchaseTaiyakis((prev) => {
+      const updataTaiyakis = prev.filter(
+        (taiyaki) => taiyaki.id !== selectedId
+      );
+      setSelectedId("");
+      return updataTaiyakis;
+    });
+  };
+
   return (
     <div className="navigation-buttons">
       <NavigationButton label="追加" url="/purchaseForm" />
