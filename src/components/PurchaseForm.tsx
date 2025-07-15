@@ -1,5 +1,6 @@
 import { type Dispatch, type SetStateAction } from "react";
 import { useNavigate } from "react-router-dom";
+import NavigationButton from "./NavigationButton";
 import useNameRadioButton from "./useNameRadioButton";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
@@ -27,6 +28,9 @@ const PurchaseForm = ({
     <div className="taiyaki-select-form">
       {nameRadioButton}
       {sizeRadioButton}
+      <div>
+        <NavigationButton label="キャンセル" url="/" />
+      </div>
     </div>
   );
 };
