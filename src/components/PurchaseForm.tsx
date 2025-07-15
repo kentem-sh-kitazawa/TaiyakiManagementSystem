@@ -26,6 +26,28 @@ const PurchaseForm = ({
   const { radioButtonElement: sizeRadioButton, selectedValue: selectedSize } =
     useNameRadioButton({ values: taiyakiSizes, label: "サイズ" });
   const navigate = useNavigate();
+  const handleOnPurchase = () => {
+    if (selectedName === "デラックスたい焼き" && selectedSize !== "大") {
+      alert("デラックスたい焼きは大しか選べません。");
+      return;
+    }
+    if (selectedName === "" || selectedSize === "") {
+      return;
+    }
+    const priceIndex = taiyakiSizes.findIndex((size) => size === selectedSize);
+
+    const newPurchaseTaiyaki: PurchaseTaiyakiType = {
+      id: uuidv4(),
+      name: selectedName,
+      price: taiyakiInfos.find((info) => info.name === selectedName)!.price[
+        priceIndex
+      ],
+      size: selectedSize,
+      type: taiyakiInfos.find((info) => info.name === selectedName)!.type,
+    };
+    setPurchaseTaiyakis((prev) => [...prev, newPurchaseTaiyaki]);
+    navigate("/");
+  };
   return (
     <div className="taiyaki-select-form">
       {nameRadioButton}
