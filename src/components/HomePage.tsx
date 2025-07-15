@@ -24,6 +24,9 @@ const HomePage = ({
     });
     return total;
   };
+  const handleOnClick = (id: string) => {
+    setSelectedId(id);
+  };
   return (
     <div className="home-page-content">
       <table>
