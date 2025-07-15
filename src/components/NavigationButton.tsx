@@ -4,9 +4,10 @@ import BaseButton from "./BaseButton";
 type Props = {
   label: string;
   url: string;
+  selectedId?: string;
 };
 
-const NavigationButton = ({ label, url }: Props) => {
+const NavigationButton = ({ label, url, selectedId }: Props) => {
   const navigate = useNavigate();
   const handleOnNavigate = () => {
     navigate(url);

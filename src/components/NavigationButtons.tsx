@@ -32,7 +32,7 @@ const NavigationButtons = ({
     <div className="navigation-buttons">
       <NavigationButton label="追加" url="/purchaseForm" />
       <BaseButton label="削除" onClick={handleOnDelete} />
-      <NavigationButton label="編集" url="/editForm" />
+      <NavigationButton label="編集" url="/editForm" selectedId={selectedId} />
     </div>
   );
 };
