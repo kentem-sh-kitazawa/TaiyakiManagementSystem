@@ -1,8 +1,22 @@
+import { useEffect, type Dispatch, type SetStateAction } from "react";
 import NavigationButtons from "./NavigationButtons";
 
+import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 import "../Styles/HomePage.css";
 
-const HomePage = () => {
+type Props = {
+  purchaseTaiyakis: PurchaseTaiyakiType[];
+  selectedId: string;
+  setPurchaseTaiyakis: Dispatch<SetStateAction<PurchaseTaiyakiType[]>>;
+  setSelectedId: Dispatch<SetStateAction<string>>;
+};
+
+const HomePage = ({
+  purchaseTaiyakis,
+  selectedId,
+  setPurchaseTaiyakis,
+  setSelectedId,
+}: Props) => {
   return (
     <div className="home-page-content">
       <table>

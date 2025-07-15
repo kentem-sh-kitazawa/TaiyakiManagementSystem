@@ -24,7 +24,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              purchaseTaiyakis={purchaseTaiyakis}
+              selectedId={selectedId}
+              setPurchaseTaiyakis={setPurchaseTaiyakis}
+              setSelectedId={setSelectedId}
+            />
+          }
+        />
         <Route
           path="/purchaseForm"
           element={
