@@ -42,9 +42,10 @@ function App() {
             <PurchaseForm
               taiyakiInfos={taiyakiInfos}
               taiyakiSizes={taiyakiSizes}
+              setPurchaseTaiyakis={setPurchaseTaiyakis}
             />
           }
-        ></Route>
+        />
         <Route
           path="/editForm"
           element={
