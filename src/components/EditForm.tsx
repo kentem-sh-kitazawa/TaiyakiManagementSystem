@@ -23,6 +23,10 @@ const EditForm = ({
     return info.name;
   });
   const navigate = useNavigate();
+  //編集するたい焼きの名前
+  const selectedName = purchaseTaiyakis.find(
+    (taiyaki) => taiyaki.id === selectedId
+  )!.name;
   //ラジオボタンとvalue
   const { radioButtonGroup: nameRadioButton } = useRadioButtonGroup({
     values: taiyakiNames,
