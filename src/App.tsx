@@ -1,11 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 import HomePage from "./components/HomePage";
 import PurchaseForm from "./components/PurchaseForm";
 import EditForm from "./components/EditForm";
 import type { taiyaki } from "./Types/TaiyakiType";
+import type { PurchaseTaiyakiType } from "./Types/PurchaseTaiyakiType";
 
 function App() {
+  const [purchaseTaiyakis, setPurchaseTaiyakis] = useState<
+    PurchaseTaiyakiType[]
+  >([]);
   const taiyakiInfos: taiyaki[] = [
     { name: "通常たい焼き", type: "あんこ", price: [200, 150, 100] },
     { name: "カスタードたい焼き", type: "カスタード", price: [250, 200, 150] },
