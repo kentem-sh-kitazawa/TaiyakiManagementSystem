@@ -17,7 +17,7 @@ const useRadioButtonGroup = ({
     initializeValue ?? values[0]
   );
 
-  const radioButtonElement = useMemo(
+  const radioButtonGroup = useMemo(
     () => (
       <>
         <div className="taiyaki-select-form">
@@ -44,7 +44,7 @@ const useRadioButtonGroup = ({
     ),
     [isDisabled, label, selectedValue, values]
   );
-  return { selectedValue, radioButtonElement };
+  return { selectedValue, radioButtonGroup };
 };
 
-export default useNameRadioButton;
+export default useRadioButtonGroup;
