@@ -1,4 +1,3 @@
-  return <div>EditForm</div>;
 import type { Dispatch, SetStateAction } from "react";
 import useNameRadioButton from "./useNameRadioButton";
 import type { taiyaki } from "../Types/TaiyakiType";
@@ -25,6 +24,12 @@ const EditForm = ({
     label: "メニュー",
     isDisabled: true,
   });
+  return (
+    <>
+      {nameRadioButton}
+      {sizeRadioButton}
+    </>
+  );
 };
 
 export default EditForm;
