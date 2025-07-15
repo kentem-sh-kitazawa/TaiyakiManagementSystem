@@ -10,3 +10,7 @@
 .home-page-content td {
   border: 1px solid;
 }
+
+.selected-taiyaki {
+  background-color: rgb(152, 152, 255);
+}
