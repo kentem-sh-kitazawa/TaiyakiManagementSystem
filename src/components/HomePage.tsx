@@ -58,7 +58,7 @@ const HomePage = ({
       </table>
       <div className="navigation-panel">
         <NavigationButtons />
-        <p>使ったお金:</p>
+        <p>使ったお金:{getTotal()}</p>
       </div>
     </div>
   );
