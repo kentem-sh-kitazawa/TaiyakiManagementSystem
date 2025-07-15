@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import type { Dispatch, SetStateAction } from "react";
+import NavigationButton from "./NavigationButton";
 import useNameRadioButton from "./useNameRadioButton";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
@@ -17,6 +19,7 @@ const EditForm = ({
   selectedId,
   setPurchaseTaiyakis,
 }: Props) => {
+  const navigate = useNavigate();
   //ラジオボタンとvalue
   const { radioButtonElement: nameRadioButton } = useNameRadioButton({
     values: taiyakiNames,
@@ -28,6 +31,7 @@ const EditForm = ({
     <>
       {nameRadioButton}
       {sizeRadioButton}
+      <NavigationButton label="キャンセル" url="/" />
     </>
   );
 };
