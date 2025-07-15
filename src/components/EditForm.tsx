@@ -30,7 +30,7 @@ const EditForm = ({
   //ラジオボタンとvalue
   const { radioButtonGroup: nameRadioButton } = useRadioButtonGroup({
     values: taiyakiNames,
-    selected: selectedName,
+    initializeValue: selectedName,
     label: "メニュー",
     isDisabled: true,
   });
