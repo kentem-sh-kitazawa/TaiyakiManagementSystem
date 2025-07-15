@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import NavigationButton from "./NavigationButton";
 import BaseButton from "./BaseButton";
-import useNameRadioButton from "./useNameRadioButton";
+import useRadioButtonGroup from "./useRadioButtonGroup";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 import "../Styles/PurchaseForm.css";
@@ -21,10 +21,10 @@ const PurchaseForm = ({
     return info.name;
   });
   //ラジオボタンとvalue
-  const { radioButtonElement: nameRadioButton, selectedValue: selectedName } =
-    useNameRadioButton({ values: taiyakiNames, label: "メニュー" });
-  const { radioButtonElement: sizeRadioButton, selectedValue: selectedSize } =
-    useNameRadioButton({ values: taiyakiSizes, label: "サイズ" });
+  const { radioButtonGroup: nameRadioButton, selectedValue: selectedName } =
+    useRadioButtonGroup({ values: taiyakiNames, label: "メニュー" });
+  const { radioButtonGroup: sizeRadioButton, selectedValue: selectedSize } =
+    useRadioButtonGroup({ values: taiyakiSizes, label: "サイズ" });
   const navigate = useNavigate();
   const handleOnPurchase = () => {
     if (selectedName === "デラックスたい焼き" && selectedSize !== "大") {

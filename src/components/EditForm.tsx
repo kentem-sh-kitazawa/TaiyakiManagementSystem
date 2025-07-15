@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import type { Dispatch, SetStateAction } from "react";
 import NavigationButton from "./NavigationButton";
-import useNameRadioButton from "./useNameRadioButton";
+import useRadioButtonGroup from "./useRadioButtonGroup";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 type Props = {
@@ -21,7 +21,7 @@ const EditForm = ({
 }: Props) => {
   const navigate = useNavigate();
   //ラジオボタンとvalue
-  const { radioButtonElement: nameRadioButton } = useNameRadioButton({
+  const { radioButtonGroup: nameRadioButton } = useRadioButtonGroup({
     values: taiyakiNames,
     selected: selectedName,
     label: "メニュー",
