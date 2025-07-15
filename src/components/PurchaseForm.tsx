@@ -31,9 +31,6 @@ const PurchaseForm = ({
       alert("デラックスたい焼きは大しか選べません。");
       return;
     }
-    if (selectedName === "" || selectedSize === "") {
-      return;
-    }
     const priceIndex = taiyakiSizes.findIndex((size) => size === selectedSize);
 
     const newPurchaseTaiyaki: PurchaseTaiyakiType = {
