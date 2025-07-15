@@ -19,6 +19,9 @@ const EditForm = ({
   selectedId,
   setPurchaseTaiyakis,
 }: Props) => {
+  const taiyakiNames = taiyakiInfos.map((info) => {
+    return info.name;
+  });
   const navigate = useNavigate();
   //ラジオボタンとvalue
   const { radioButtonGroup: nameRadioButton } = useRadioButtonGroup({
