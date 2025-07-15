@@ -1,11 +1,23 @@
+import type { Dispatch, SetStateAction } from "react";
+
 import NavigationButton from "./NavigationButton";
 import BaseButton from "./BaseButton";
 
 import "../Styles/NavigationButtons.css";
 
-const NavigationButtons = () => {
-  const handleOnDelete = () => {};
+import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 
+type Props = {
+  selectedId: string;
+  setPurchaseTaiyakis: Dispatch<SetStateAction<PurchaseTaiyakiType[]>>;
+  setSelectedId: Dispatch<SetStateAction<string>>;
+};
+
+const NavigationButtons = ({
+  selectedId,
+  setPurchaseTaiyakis,
+  setSelectedId,
+}: Props) => {
   return (
     <div className="navigation-buttons">
       <NavigationButton label="追加" url="/purchaseForm" />

@@ -57,7 +57,11 @@ const HomePage = ({
         </tbody>
       </table>
       <div className="navigation-panel">
-        <NavigationButtons />
+        <NavigationButtons
+          selectedId={selectedId}
+          setPurchaseTaiyakis={setPurchaseTaiyakis}
+          setSelectedId={setSelectedId}
+        />
         <p>使ったお金:{getTotal()}</p>
       </div>
     </div>
