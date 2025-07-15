@@ -14,6 +14,9 @@ const PurchaseForm = ({
   taiyakiSizes,
   setPurchaseTaiyakis,
 }: Props) => {
+  const taiyakiNames = taiyakiInfos.map((info) => {
+    return info.name;
+  });
   //ラジオボタンとvalue
   const { radioButtonElement: nameRadioButton, selectedValue: selectedName } =
     useNameRadioButton({ values: taiyakiNames, label: "メニュー" });
