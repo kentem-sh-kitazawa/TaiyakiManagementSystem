@@ -1,5 +1,6 @@
   return <div>EditForm</div>;
 import type { Dispatch, SetStateAction } from "react";
+import useNameRadioButton from "./useNameRadioButton";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 type Props = {
@@ -17,6 +18,13 @@ const EditForm = ({
   selectedId,
   setPurchaseTaiyakis,
 }: Props) => {
+  //ラジオボタンとvalue
+  const { radioButtonElement: nameRadioButton } = useNameRadioButton({
+    values: taiyakiNames,
+    selected: selectedName,
+    label: "メニュー",
+    isDisabled: true,
+  });
 };
 
 export default EditForm;
