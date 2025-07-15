@@ -49,9 +49,15 @@ function App() {
         <Route
           path="/editForm"
           element={
-            <EditForm taiyakiInfos={taiyakiInfos} taiyakiSizes={taiyakiSizes} />
+            <EditForm
+              purchaseTaiyakis={purchaseTaiyakis}
+              taiyakiInfos={taiyakiInfos}
+              taiyakiSizes={taiyakiSizes}
+              selectedId={selectedId}
+              setPurchaseTaiyakis={setPurchaseTaiyakis}
+            />
           }
-        ></Route>
+        />
       </Routes>
     </Router>
   );
