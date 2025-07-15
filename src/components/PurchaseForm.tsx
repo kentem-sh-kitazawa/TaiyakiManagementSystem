@@ -1,5 +1,6 @@
   return <div>PurchaseForm</div>;
 import { type Dispatch, type SetStateAction } from "react";
+import { useNavigate } from "react-router-dom";
 import useNameRadioButton from "./useNameRadioButton";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
@@ -22,6 +23,7 @@ const PurchaseForm = ({
     useNameRadioButton({ values: taiyakiNames, label: "メニュー" });
   const { radioButtonElement: sizeRadioButton, selectedValue: selectedSize } =
     useNameRadioButton({ values: taiyakiSizes, label: "サイズ" });
+  const navigate = useNavigate();
 };
 
 export default PurchaseForm;
