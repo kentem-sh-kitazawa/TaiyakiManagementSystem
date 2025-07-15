@@ -7,14 +7,15 @@ type Props = {
   isDisabled?: boolean;
 };
 
-  const [selectedValue, setSelectedValue] = useState(values[0]);
-  const [checkedName, setCheckedName] = useState(selected ?? values[0]);
 const useRadioButtonGroup = ({
   values,
   label,
   initializeValue,
   isDisabled,
 }: Props) => {
+  const [selectedValue, setSelectedValue] = useState(
+    initializeValue ?? values[0]
+  );
 
   const radioButtonElement = useMemo(
     () => (
@@ -28,10 +29,9 @@ const useRadioButtonGroup = ({
                   type="radio"
                   name={values[0]}
                   value={value}
-                  checked={checkedName === value}
+                  checked={selectedValue === value}
                   disabled={isDisabled}
                   onChange={() => {
-                    setCheckedName(value);
                     setSelectedValue(value);
                   }}
                 />
@@ -42,7 +42,7 @@ const useRadioButtonGroup = ({
         </div>
       </>
     ),
-    [checkedName, isDisabled, label, values]
+    [isDisabled, label, selectedValue, values]
   );
   return { selectedValue, radioButtonElement };
 };
