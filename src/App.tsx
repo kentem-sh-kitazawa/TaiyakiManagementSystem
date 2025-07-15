@@ -11,6 +11,7 @@ function App() {
   const [purchaseTaiyakis, setPurchaseTaiyakis] = useState<
     PurchaseTaiyakiType[]
   >([]);
+  const [selectedId, setSelectedId] = useState("");
   const taiyakiInfos: taiyaki[] = [
     { name: "通常たい焼き", type: "あんこ", price: [200, 150, 100] },
     { name: "カスタードたい焼き", type: "カスタード", price: [250, 200, 150] },
