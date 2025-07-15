@@ -1,7 +1,9 @@
 import { useEffect, type Dispatch, type SetStateAction } from "react";
+
 import NavigationButtons from "./NavigationButtons";
 
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
+
 import "../Styles/HomePage.css";
 
 type Props = {
@@ -24,12 +26,15 @@ const HomePage = ({
     });
     return total;
   };
+
   const handleOnClick = (id: string) => {
     setSelectedId(id);
   };
+
   useEffect(() => {
     setSelectedId("");
   }, [setSelectedId]);
+
   return (
     <div className="home-page-content">
       <table>

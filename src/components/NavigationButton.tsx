@@ -9,8 +9,10 @@ type Props = {
 
 const NavigationButton = ({ label, url, selectedId }: Props) => {
   const navigate = useNavigate();
+
   const handleOnNavigate = () => {
     if (label === "編集" && !selectedId) return;
+
     navigate(url);
   };
   return <BaseButton label={label} onClick={handleOnNavigate} />;
