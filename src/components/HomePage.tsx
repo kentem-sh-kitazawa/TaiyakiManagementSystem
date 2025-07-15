@@ -42,12 +42,18 @@ const HomePage = ({
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>あ</td>
-            <td>あ</td>
-            <td>あ</td>
-            <td>あ</td>
-          </tr>
+          {purchaseTaiyakis.map((taiyaki) => (
+            <tr
+              className={taiyaki.id === selectedId ? "selected-taiyaki" : ""}
+              key={taiyaki.id}
+              onClick={() => handleOnClick(taiyaki.id)}
+            >
+              <td>{taiyaki.name}</td>
+              <td>{taiyaki.type}</td>
+              <td>{taiyaki.size}</td>
+              <td>{taiyaki.price}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <div className="navigation-panel">
