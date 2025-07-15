@@ -1,0 +1,9 @@
+.taiyaki-select-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.taiyaki-name-select {
+  display: flex;
+  flex-direction: column;
+}
