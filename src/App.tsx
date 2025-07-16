@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import HomePage from "./components/HomePage";
 
-import type { taiyaki } from "./Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "./Types/PurchaseTaiyakiType";
 import PurchaseEditForm from "./components/PurchaseEditForm";
 
