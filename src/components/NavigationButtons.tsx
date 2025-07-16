@@ -2,10 +2,9 @@ import type { Dispatch, SetStateAction } from "react";
 
 import NavigationButton from "./NavigationButton";
 import BaseButton from "./BaseButton";
+import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 
 import "../Styles/NavigationButtons.css";
-
-import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 
 type Props = {
   selectedId: string;
