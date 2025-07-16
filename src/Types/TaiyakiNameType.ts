@@ -1,7 +1,7 @@
 const TaiyakiName = {
-  0: "通常たい焼き",
-  1: "カスタードたい焼き",
-  2: "デラックスたい焼き",
+  default: "通常たい焼き",
+  custard: "カスタードたい焼き",
+  deluxe: "デラックスたい焼き",
 } as const;
 
 type TaiyakiName = (typeof TaiyakiName)[keyof typeof TaiyakiName];
