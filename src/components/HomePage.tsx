@@ -2,6 +2,7 @@ import { useEffect, type Dispatch, type SetStateAction } from "react";
 
 import NavigationButtons from "./NavigationButtons";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
+import useInputNumber from "./useInputNumber";
 
 import "../Styles/HomePage.css";
 
@@ -22,6 +23,7 @@ const HomePage = ({
   setSelectedTaiyaki,
   setPurchaseTaiyakis,
 }: Props) => {
+  const { InputNumber, valueNumber } = useInputNumber();
   const getTotal = () => {
     let total = 0;
     purchaseTaiyakis.forEach((taiyaki) => {
@@ -73,6 +75,7 @@ const HomePage = ({
           setPurchaseTaiyakis={setPurchaseTaiyakis}
         />
         <p>使ったお金:{getTotal()}</p>
+          {InputNumber}
       </div>
     </div>
   );
