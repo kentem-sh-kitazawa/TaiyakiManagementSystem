@@ -33,8 +33,16 @@ const HomePage = ({
     return total;
   };
 
-  const handleOnClick = (selectedTaiyaki: PurchaseTaiyakiType) => {
+  const handleOnSelectedTaiyaki = (selectedTaiyaki: PurchaseTaiyakiType) => {
     setSelectedTaiyaki(selectedTaiyaki);
+  };
+
+  const handleOnMoneyReceived = () => {
+    if (!valueNumber || valueNumber < 0) {
+      return;
+    }
+
+    setMyMoney((prev) => prev + valueNumber);
   };
 
   useEffect(() => {
