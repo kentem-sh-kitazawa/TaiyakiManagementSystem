@@ -56,9 +56,7 @@ const PurchaseEditForm = ({
     const newPurchaseTaiyaki: PurchaseTaiyakiType = {
       id: uuidv4(),
       name: selectedName,
-      price: taiyakiInfos.find((info) => info.name === selectedName)!.price[
-        taiyakiSizes.indexOf(selectedSize)
-      ],
+      price: purchaseTaiyakiPrice,
       size: selectedSize,
       type: taiyakiInfos.find((info) => info.name === selectedName)!.type,
     };
@@ -86,8 +84,7 @@ const PurchaseEditForm = ({
           ? {
               ...taiyaki,
               size: selectedSize,
-              price: taiyakiInfos.find((info) => info.name === selectedName)!
-                .price[taiyakiSizes.indexOf(selectedSize)],
+              price: purchaseTaiyakiPrice,
             }
           : taiyaki
       );
