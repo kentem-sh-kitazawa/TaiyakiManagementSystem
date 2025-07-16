@@ -11,11 +11,18 @@ import TaiyakiName from "../Types/TaiyakiNameType";
 import TaiyakiSize from "../Types/TaiyakiSizeType";
 
 type Props = {
+  myMoney: number;
   selectedTaiyaki?: PurchaseTaiyakiType;
+  setMyMoney: Dispatch<SetStateAction<number>>;
   setPurchaseTaiyakis: Dispatch<SetStateAction<PurchaseTaiyakiType[]>>;
 };
 
-const PurchaseEditForm = ({ selectedTaiyaki, setPurchaseTaiyakis }: Props) => {
+const PurchaseEditForm = ({
+  myMoney,
+  selectedTaiyaki,
+  setMyMoney,
+  setPurchaseTaiyakis,
+}: Props) => {
   const isEdit = !!selectedTaiyaki;
 
   const navigate = useNavigate();

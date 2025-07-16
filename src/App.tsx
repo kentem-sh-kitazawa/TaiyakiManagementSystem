@@ -33,14 +33,20 @@ function App() {
         <Route
           path="/purchaseForm"
           element={
-            <PurchaseEditForm setPurchaseTaiyakis={setPurchaseTaiyakis} />
+            <PurchaseEditForm
+              setPurchaseTaiyakis={setPurchaseTaiyakis}
+              myMoney={myMoney}
+              setMyMoney={setMyMoney}
+            />
           }
         />
         <Route
           path="/editForm"
           element={
             <PurchaseEditForm
+              myMoney={myMoney}
               selectedTaiyaki={selectedTaiyaki}
+              setMyMoney={setMyMoney}
               setPurchaseTaiyakis={setPurchaseTaiyakis}
             />
           }
