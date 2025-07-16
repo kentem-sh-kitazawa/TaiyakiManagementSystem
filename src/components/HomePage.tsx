@@ -50,33 +50,16 @@ const HomePage = ({
   }, [setSelectedTaiyaki]);
 
   return (
-    <div className="home-page-content">
-      <table>
-        <thead>
-          <tr>
-            <td>種類</td>
-            <td>中身</td>
-            <td>サイズ</td>
-            <td>価格</td>
-          </tr>
-        </thead>
-        <tbody>
-          {purchaseTaiyakis.map((taiyaki) => (
-            <tr
-              className={
-                taiyaki.id === selectedTaiyaki?.id ? "selected-taiyaki" : ""
-              }
-              key={taiyaki.id}
-              onClick={() => handleOnClick(taiyaki)}
-            >
-              <td>{taiyaki.name}</td>
-              <td>{taiyaki.type}</td>
-              <td>{taiyaki.size}</td>
-              <td>{taiyaki.price}</td>
+    <>
+      <div className="home-page-content">
+        <table>
+          <thead>
+            <tr>
+              <td>種類</td>
+              <td>中身</td>
+              <td>サイズ</td>
+              <td>価格</td>
             </tr>
-          ))}
-        </tbody>
-      </table>
       <div className="navigation-panel">
         <NavigationButtons
           selectedTaiyaki={selectedTaiyaki}
@@ -84,6 +67,24 @@ const HomePage = ({
           setPurchaseTaiyakis={setPurchaseTaiyakis}
         />
         <p>使ったお金:{getTotal()}</p>
+          </thead>
+          <tbody>
+            {purchaseTaiyakis.map((taiyaki) => (
+              <tr
+                className={
+                  taiyaki.id === selectedTaiyaki?.id ? "selected-taiyaki" : ""
+                }
+                key={taiyaki.id}
+                onClick={() => handleOnSelectedTaiyaki(taiyaki)}
+              >
+                <td>{taiyaki.name}</td>
+                <td>{taiyaki.type}</td>
+                <td>{taiyaki.size}</td>
+                <td>{taiyaki.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
           {InputNumber}
           <BaseButton label="所持金追加" onClick={handleOnMoneyReceived} />
       </div>
