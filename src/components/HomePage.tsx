@@ -3,9 +3,9 @@ import { useEffect, type Dispatch, type SetStateAction } from "react";
 import NavigationButtons from "./NavigationButtons";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 import useInputNumber from "./useInputNumber";
+import BaseButton from "./BaseButton";
 
 import "../Styles/HomePage.css";
-import BaseButton from "./BaseButton";
 
 type Props = {
   purchaseTaiyakis: PurchaseTaiyakiType[];
