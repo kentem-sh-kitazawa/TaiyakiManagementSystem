@@ -5,6 +5,7 @@ import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 import useInputNumber from "./useInputNumber";
 
 import "../Styles/HomePage.css";
+import BaseButton from "./BaseButton";
 
 type Props = {
   purchaseTaiyakis: PurchaseTaiyakiType[];
@@ -76,6 +77,7 @@ const HomePage = ({
         />
         <p>使ったお金:{getTotal()}</p>
           {InputNumber}
+          <BaseButton label="所持金追加" onClick={handleOnMoneyReceived} />
       </div>
     </div>
       <progress id="file" max={myMoney} value={getTotal()}></progress>
