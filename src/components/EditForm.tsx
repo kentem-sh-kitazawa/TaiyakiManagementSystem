@@ -5,6 +5,8 @@ import useRadioButtonGroup from "./useRadioButtonGroup";
 import BaseButton from "./BaseButton";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
+import TaiyakiName from "../Types/TaiyakiNameType";
+import TaiyakiSize from "../Types/TaiyakiSizeType";
 type Props = {
   purchaseTaiyakis: PurchaseTaiyakiType[];
   taiyakiInfos: taiyaki[];
@@ -37,6 +39,28 @@ const EditForm = ({
   });
   const { radioButtonGroup: sizeRadioButton, selectedValue: selectedSize } =
     useRadioButtonGroup({ values: taiyakiSizes, label: "サイズ" });
+  const handleOnEdit = () => {
+    if (selectedName === TaiyakiName[2] && selectedSize !== TaiyakiSize.L) {
+      alert(`${TaiyakiName[2]}は${TaiyakiSize.L}しか選べません。`);
+      return;
+    }
+
+    const priceIndex = taiyakiSizes.findIndex((size) => size === selectedSize);
+
+    setPurchaseTaiyakis((prev) => {
+      return prev.map((taiyaki) =>
+        taiyaki.id === selectedId
+          ? {
+              ...taiyaki,
+              size: selectedSize,
+              price: taiyakiInfos.find((info) => info.name === selectedName)!
+                .price[priceIndex],
+            }
+          : taiyaki
+      );
+    });
+    navigate("/");
+  };
   return (
     <>
       {nameRadioButton}
