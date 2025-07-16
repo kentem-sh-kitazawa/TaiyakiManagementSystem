@@ -25,6 +25,7 @@ const HomePage = ({
   setPurchaseTaiyakis,
 }: Props) => {
   const { InputNumber, valueNumber } = useInputNumber();
+
   const getTotal = () => {
     let total = 0;
     purchaseTaiyakis.forEach((taiyaki) => {
