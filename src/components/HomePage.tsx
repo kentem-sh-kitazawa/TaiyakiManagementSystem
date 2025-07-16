@@ -8,6 +8,8 @@ import "../Styles/HomePage.css";
 type Props = {
   purchaseTaiyakis: PurchaseTaiyakiType[];
   selectedTaiyaki: PurchaseTaiyakiType | undefined;
+  myMoney: number;
+  setMyMoney: Dispatch<SetStateAction<number>>;
   setSelectedTaiyaki: Dispatch<SetStateAction<PurchaseTaiyakiType | undefined>>;
   setPurchaseTaiyakis: Dispatch<SetStateAction<PurchaseTaiyakiType[]>>;
 };
@@ -15,6 +17,8 @@ type Props = {
 const HomePage = ({
   purchaseTaiyakis,
   selectedTaiyaki,
+  myMoney,
+  setMyMoney,
   setSelectedTaiyaki,
   setPurchaseTaiyakis,
 }: Props) => {

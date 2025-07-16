@@ -23,8 +23,10 @@ function App() {
             <HomePage
               purchaseTaiyakis={purchaseTaiyakis}
               selectedTaiyaki={selectedTaiyaki}
+              myMoney={myMoney}
               setSelectedTaiyaki={setSelectedTaiyaki}
               setPurchaseTaiyakis={setPurchaseTaiyakis}
+              setMyMoney={setMyMoney}
             />
           }
         />
