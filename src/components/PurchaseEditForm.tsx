@@ -38,6 +38,10 @@ const PurchaseEditForm = ({
   const { radioButtonGroup: sizeRadioButton, selectedValue: selectedSize } =
     useRadioButtonGroup({ values: taiyakiSizes, label: "サイズ" });
 
+  const purchaseTaiyakiPrice = taiyakiInfos.find(
+    (info) => info.name === selectedName
+  )!.price[taiyakiSizes.indexOf(selectedSize)];
+
   const handleOnPurchase = () => {
     if (selectedName === TaiyakiName.deluxe && selectedSize !== TaiyakiSize.L) {
       alert(`${TaiyakiName.deluxe}は${TaiyakiSize.L}しか選べません。`);
