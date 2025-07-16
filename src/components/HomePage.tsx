@@ -78,6 +78,7 @@ const HomePage = ({
           {InputNumber}
       </div>
     </div>
+      <progress id="file" max={myMoney} value={getTotal()}></progress>
   );
 };
 
