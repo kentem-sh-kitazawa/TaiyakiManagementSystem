@@ -10,7 +10,6 @@ function App() {
   const [purchaseTaiyakis, setPurchaseTaiyakis] = useState<
     PurchaseTaiyakiType[]
   >([]);
-
   const [selectedTaiyaki, setSelectedTaiyaki] = useState<PurchaseTaiyakiType>();
   const [myMoney, setMyMoney] = useState(0);
 

@@ -101,7 +101,6 @@ const PurchaseEditForm = ({
       ) : (
         <BaseButton label="購入" onClick={handleOnPurchase} />
       )}
-
       <NavigationButton label="キャンセル" url="/" />
       <p>
         購入金額:
