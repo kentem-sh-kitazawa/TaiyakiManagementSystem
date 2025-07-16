@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import type { Dispatch, SetStateAction } from "react";
 import NavigationButton from "./NavigationButton";
 import useRadioButtonGroup from "./useRadioButtonGroup";
+import BaseButton from "./BaseButton";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 type Props = {
@@ -40,6 +41,7 @@ const EditForm = ({
     <>
       {nameRadioButton}
       {sizeRadioButton}
+      <BaseButton label="交換" onClick={handleOnEdit} />
       <NavigationButton label="キャンセル" url="/" />
     </>
   );
