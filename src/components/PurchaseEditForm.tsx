@@ -103,6 +103,12 @@ const PurchaseEditForm = ({
       )}
 
       <NavigationButton label="キャンセル" url="/" />
+      <p>
+        購入金額:
+        {taiyakiInfos.find((info) => info.name === selectedName)?.price[
+          taiyakiSizes.indexOf(selectedSize)
+        ] ?? `販売していません`}
+      </p>
     </>
   );
 };
