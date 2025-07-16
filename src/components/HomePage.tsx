@@ -60,13 +60,6 @@ const HomePage = ({
               <td>サイズ</td>
               <td>価格</td>
             </tr>
-      <div className="navigation-panel">
-        <NavigationButtons
-          selectedTaiyaki={selectedTaiyaki}
-          setSelectedTaiyaki={setSelectedTaiyaki}
-          setPurchaseTaiyakis={setPurchaseTaiyakis}
-        />
-        <p>使ったお金:{getTotal()}</p>
           </thead>
           <tbody>
             {purchaseTaiyakis.map((taiyaki) => (
@@ -85,11 +78,20 @@ const HomePage = ({
             ))}
           </tbody>
         </table>
+        <div className="navigation-panel">
+          <NavigationButtons
+            selectedTaiyaki={selectedTaiyaki}
+            setSelectedTaiyaki={setSelectedTaiyaki}
+            setPurchaseTaiyakis={setPurchaseTaiyakis}
+          />
+          <p>使ったお金:{getTotal()}</p>
+          <p>所持金:{myMoney}</p>
           {InputNumber}
           <BaseButton label="所持金追加" onClick={handleOnMoneyReceived} />
+        </div>
       </div>
-    </div>
       <progress id="file" max={myMoney} value={getTotal()}></progress>
+    </>
   );
 };
 
