@@ -34,6 +34,8 @@ const EditForm = ({
     label: "メニュー",
     isDisabled: true,
   });
+  const { radioButtonGroup: sizeRadioButton, selectedValue: selectedSize } =
+    useRadioButtonGroup({ values: taiyakiSizes, label: "サイズ" });
   return (
     <>
       {nameRadioButton}
