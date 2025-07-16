@@ -7,22 +7,22 @@ import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 import "../Styles/NavigationButtons.css";
 
 type Props = {
-  selectedId: string;
+  selectedTaiyaki: PurchaseTaiyakiType | undefined;
+  setSelectedTaiyaki: Dispatch<SetStateAction<PurchaseTaiyakiType | undefined>>;
   setPurchaseTaiyakis: Dispatch<SetStateAction<PurchaseTaiyakiType[]>>;
-  setSelectedId: Dispatch<SetStateAction<string>>;
 };
 
 const NavigationButtons = ({
-  selectedId,
+  selectedTaiyaki,
+  setSelectedTaiyaki,
   setPurchaseTaiyakis,
-  setSelectedId,
 }: Props) => {
   const handleOnDelete = () => {
     setPurchaseTaiyakis((prev) => {
       const updataTaiyakis = prev.filter(
-        (taiyaki) => taiyaki.id !== selectedId
+        (taiyaki) => taiyaki.id !== selectedTaiyaki?.id
       );
-      setSelectedId("");
+      setSelectedTaiyaki(undefined);
       return updataTaiyakis;
     });
   };
@@ -31,7 +31,11 @@ const NavigationButtons = ({
     <div className="navigation-buttons">
       <NavigationButton label="追加" url="/purchaseForm" />
       <BaseButton label="削除" onClick={handleOnDelete} />
-      <NavigationButton label="編集" url="/editForm" selectedId={selectedId} />
+      <NavigationButton
+        label="編集"
+        url="/editForm"
+        selectedId={selectedTaiyaki?.id}
+      />
     </div>
   );
 };

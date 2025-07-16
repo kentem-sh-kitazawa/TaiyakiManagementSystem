@@ -12,8 +12,7 @@ function App() {
     PurchaseTaiyakiType[]
   >([]);
 
-  const [selectedId, setSelectedId] = useState("");
-
+  const [selectedTaiyaki, setSelectedTaiyaki] = useState<PurchaseTaiyakiType>();
 
   return (
     <Router>
@@ -23,9 +22,9 @@ function App() {
           element={
             <HomePage
               purchaseTaiyakis={purchaseTaiyakis}
-              selectedId={selectedId}
+              selectedTaiyaki={selectedTaiyaki}
+              setSelectedTaiyaki={setSelectedTaiyaki}
               setPurchaseTaiyakis={setPurchaseTaiyakis}
-              setSelectedId={setSelectedId}
             />
           }
         />

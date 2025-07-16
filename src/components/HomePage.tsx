@@ -8,16 +8,16 @@ import "../Styles/HomePage.css";
 
 type Props = {
   purchaseTaiyakis: PurchaseTaiyakiType[];
-  selectedId: string;
+  selectedTaiyaki: PurchaseTaiyakiType | undefined;
+  setSelectedTaiyaki: Dispatch<SetStateAction<PurchaseTaiyakiType | undefined>>;
   setPurchaseTaiyakis: Dispatch<SetStateAction<PurchaseTaiyakiType[]>>;
-  setSelectedId: Dispatch<SetStateAction<string>>;
 };
 
 const HomePage = ({
   purchaseTaiyakis,
-  selectedId,
+  selectedTaiyaki,
+  setSelectedTaiyaki,
   setPurchaseTaiyakis,
-  setSelectedId,
 }: Props) => {
   const getTotal = () => {
     let total = 0;
@@ -27,13 +27,13 @@ const HomePage = ({
     return total;
   };
 
-  const handleOnClick = (id: string) => {
-    setSelectedId(id);
+  const handleOnClick = (selectedTaiyaki: PurchaseTaiyakiType) => {
+    setSelectedTaiyaki(selectedTaiyaki);
   };
 
   useEffect(() => {
-    setSelectedId("");
-  }, [setSelectedId]);
+    setSelectedTaiyaki(undefined);
+  }, [setSelectedTaiyaki]);
 
   return (
     <div className="home-page-content">
@@ -49,9 +49,11 @@ const HomePage = ({
         <tbody>
           {purchaseTaiyakis.map((taiyaki) => (
             <tr
-              className={taiyaki.id === selectedId ? "selected-taiyaki" : ""}
+              className={
+                taiyaki.id === selectedTaiyaki?.id ? "selected-taiyaki" : ""
+              }
               key={taiyaki.id}
-              onClick={() => handleOnClick(taiyaki.id)}
+              onClick={() => handleOnClick(taiyaki)}
             >
               <td>{taiyaki.name}</td>
               <td>{taiyaki.type}</td>
@@ -63,9 +65,9 @@ const HomePage = ({
       </table>
       <div className="navigation-panel">
         <NavigationButtons
-          selectedId={selectedId}
+          selectedTaiyaki={selectedTaiyaki}
+          setSelectedTaiyaki={setSelectedTaiyaki}
           setPurchaseTaiyakis={setPurchaseTaiyakis}
-          setSelectedId={setSelectedId}
         />
         <p>使ったお金:{getTotal()}</p>
       </div>
