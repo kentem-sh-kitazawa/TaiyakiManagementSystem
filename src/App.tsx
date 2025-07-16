@@ -12,6 +12,7 @@ function App() {
   >([]);
 
   const [selectedTaiyaki, setSelectedTaiyaki] = useState<PurchaseTaiyakiType>();
+  const [myMoney, setMyMoney] = useState(0);
 
   return (
     <Router>
