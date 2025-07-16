@@ -47,12 +47,14 @@ const PurchaseEditForm = ({
       alert(`${TaiyakiName.deluxe}は${TaiyakiSize.L}しか選べません。`);
       return;
     }
+
     if (myMoney < purchaseTaiyakiPrice) {
       alert("所持金が足りません");
       return;
     } else {
       setMyMoney((prev) => prev - purchaseTaiyakiPrice);
     }
+
     const newPurchaseTaiyaki: PurchaseTaiyakiType = {
       id: uuidv4(),
       name: selectedName,
@@ -78,6 +80,7 @@ const PurchaseEditForm = ({
         (prev) => prev + selectedTaiyaki!.price - purchaseTaiyakiPrice
       );
     }
+
     setPurchaseTaiyakis((prev) => {
       return prev.map((taiyaki) =>
         taiyaki.id === selectedTaiyaki?.id
