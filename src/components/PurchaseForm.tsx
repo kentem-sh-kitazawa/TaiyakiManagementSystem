@@ -6,6 +6,8 @@ import BaseButton from "./BaseButton";
 import useRadioButtonGroup from "./useRadioButtonGroup";
 import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
+import TaiyakiSize from "../Types/TaiyakiSizeType";
+import TaiyakiName from "../Types/TaiyakiNameType";
 import "../Styles/PurchaseForm.css";
 type Props = {
   taiyakiInfos: taiyaki[];
@@ -27,8 +29,8 @@ const PurchaseForm = ({
     useRadioButtonGroup({ values: taiyakiSizes, label: "サイズ" });
   const navigate = useNavigate();
   const handleOnPurchase = () => {
-    if (selectedName === "デラックスたい焼き" && selectedSize !== "大") {
-      alert("デラックスたい焼きは大しか選べません。");
+    if (selectedName === TaiyakiName[2] && selectedSize !== TaiyakiSize.L) {
+      alert(`${TaiyakiName[2]}は${TaiyakiSize.L}しか選べません。`);
       return;
     }
     const priceIndex = taiyakiSizes.findIndex((size) => size === selectedSize);
