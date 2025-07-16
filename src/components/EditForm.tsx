@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import type { Dispatch, SetStateAction } from "react";
+
 import NavigationButton from "./NavigationButton";
 import useRadioButtonGroup from "./useRadioButtonGroup";
 import BaseButton from "./BaseButton";
@@ -7,6 +8,7 @@ import type { taiyaki } from "../Types/TaiyakiType";
 import type { PurchaseTaiyakiType } from "../Types/PurchaseTaiyakiType";
 import TaiyakiName from "../Types/TaiyakiNameType";
 import TaiyakiSize from "../Types/TaiyakiSizeType";
+
 type Props = {
   purchaseTaiyakis: PurchaseTaiyakiType[];
   taiyakiInfos: taiyaki[];
@@ -25,11 +27,14 @@ const EditForm = ({
   const taiyakiNames = taiyakiInfos.map((info) => {
     return info.name;
   });
+
   const navigate = useNavigate();
+
   //編集するたい焼きの名前
   const selectedName = purchaseTaiyakis.find(
     (taiyaki) => taiyaki.id === selectedId
   )!.name;
+
   //ラジオボタンとvalue
   const { radioButtonGroup: nameRadioButton } = useRadioButtonGroup({
     values: taiyakiNames,
@@ -37,8 +42,10 @@ const EditForm = ({
     label: "メニュー",
     isDisabled: true,
   });
+
   const { radioButtonGroup: sizeRadioButton, selectedValue: selectedSize } =
     useRadioButtonGroup({ values: taiyakiSizes, label: "サイズ" });
+
   const handleOnEdit = () => {
     if (selectedName === TaiyakiName[2] && selectedSize !== TaiyakiSize.L) {
       alert(`${TaiyakiName[2]}は${TaiyakiSize.L}しか選べません。`);
@@ -61,6 +68,7 @@ const EditForm = ({
     });
     navigate("/");
   };
+
   return (
     <>
       {nameRadioButton}
